@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
+import { taskSet } from '../../../App';
 
-const Form = ({ taskSet }) => {
+const Form = () => {
 
     const onDodajZadanie = (event) => {
         event.preventDefault();

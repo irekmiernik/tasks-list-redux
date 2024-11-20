@@ -1,4 +1,6 @@
-const TasksList = ({ taskSet }) =>
+import { taskSet } from "../../../App";
+
+const TasksList = () =>
 (
     <ul className="sectionTasksList">
         {taskSet.tasksTable.map(task => (
@@ -24,4 +26,5 @@ const TasksList = ({ taskSet }) =>
         ))}
     </ul>
 );
+
 export default TasksList;

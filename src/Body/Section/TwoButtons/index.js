@@ -1,4 +1,6 @@
-const TwoButtons = ({ taskSet }) =>
+import { taskSet } from "../../../App";
+
+const TwoButtons = () =>
 
     (taskSet.tasksTable.length > 0) &&
     (
@@ -19,4 +21,5 @@ const TwoButtons = ({ taskSet }) =>
             </button>
         </>
     );
+
 export default TwoButtons;
