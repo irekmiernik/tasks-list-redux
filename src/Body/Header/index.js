@@ -1,6 +1,9 @@
-import './style.css';
+import styled from "styled-components";
 
-const Header = ({ title }) => (
-    <h1 className="h1">{title} </h1>
+const H1 = styled.h1`
+  max-width: 1000px;
+`;
+
+export const Header = ({ title }) => (
+    <H1>{title}</H1>
 );
-export default Header;
