@@ -1,25 +1,24 @@
-import { taskSet } from "../../../App";
+import { taskSet } from "./App";
+import { StyledButton } from "./styled";
 
-const TwoButtons = () =>
+export const TwoButtons = () =>
 
     (taskSet.tasksTable.length > 0) &&
     (
         <>
-            <button
-                className="sectionFlex__itemButton"
+            <StyledButton
+                $header
                 disabled={taskSet.tasksTable.every(({ done }) => !done)}
                 onClick={taskSet.toggleHideTasks}
             >
                 {taskSet.hideTasks ? "Pokaż" : "Ukryj"} ukończone
-            </button>
-            <button
-                className="sectionFlex__itemButton"
+            </StyledButton>
+            <StyledButton
+                $header
                 disabled={taskSet.tasksTable.every(({ done }) => done)}
                 onClick={taskSet.setAllTasksDone}
             >
                 Ukończ wszystkie
-            </button>
+            </StyledButton>
         </>
     );
-
-export default TwoButtons;

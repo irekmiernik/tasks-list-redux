@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react';
-import { taskSet } from '../../../App';
+import { taskSet } from './App';
+import { StyledForm, StyledInput, StyledButton } from './styled';
 
-const Form = () => {
+export const Form = () => {
 
     const onDodajZadanie = (event) => {
         event.preventDefault();
@@ -17,18 +18,15 @@ const Form = () => {
     const inputRef = useRef(null);
 
     return (
-        <form className="sectionFlex" onSubmit={onDodajZadanie}>
-            <input
-                className="sectionFlex__itemContent"
+        <StyledForm onSubmit={onDodajZadanie}>
+            <StyledInput
                 placeholder="Co jest do zrobienia?"
                 value={taskName}
                 onChange={({ target }) => setTaskName(target.value)}
                 autoFocus
                 ref={inputRef}
             />
-            <button className="sectionFlex__itemButton">Dodaj zadanie</button>
-        </form>
+            <StyledButton>Dodaj zadanie</StyledButton>
+        </StyledForm>
     );
-}
-
-export default Form;
+};
