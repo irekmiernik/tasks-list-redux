@@ -1,5 +1,5 @@
-import { taskSet } from "./App";
-import { StyledButton } from "./styled";
+import { taskSet } from "./Main";
+import { StyledButton } from "../../styled";
 
 export const TwoButtons = () =>
 

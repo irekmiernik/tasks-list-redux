@@ -1,5 +1,5 @@
-import { taskSet } from "./App";
-import { StyledUl, StyledLi, StyledSpan, StyledButton } from "./styled";
+import { taskSet } from "./Main";
+import { StyledUl, StyledLi, StyledSpan, StyledButton } from "../../styled";
 
 export const TasksList = () =>
 (

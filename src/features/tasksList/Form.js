@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
-import { taskSet } from './App';
-import { StyledForm, StyledInput, StyledButton } from './styled';
+import { taskSet } from './Main';
+import { StyledForm, StyledInput, StyledButton } from '../../styled';
 
 export const Form = () => {
 
