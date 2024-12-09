@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { taskSet } from './Main';
 import { StyledForm, StyledInput, StyledButton } from '../../styled';
 
-export const Form = () => {
+export const AddTask = () => {
 
     const onDodajZadanie = (event) => {
         event.preventDefault();
