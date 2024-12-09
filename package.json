@@ -1,8 +1,8 @@
 {
-  "name": "tasks-list-styled",
+  "name": "tasks-list-redux",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://irekmiernik.github.io/tasks-list-styled",
+  "homepage": "https://irekmiernik.github.io/tasks-list-redux",
   "dependencies": {
     "@reduxjs/toolkit": "^2.4.0",
     "@testing-library/jest-dom": "^5.17.0",
