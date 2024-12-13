@@ -1,14 +1,15 @@
-import { useTasks } from '../../useTasks';
+import { useSelector } from 'react-redux';
+import { tasksState } from './tasksListSlice';
 import { Body } from '../../common/Body';
 import { Header } from '../../common/Header';
 import { Section } from '../../common/Section';
 import { AddTask } from './AddTask';
 import { TwoButtons } from './TwoButtons';
 import { TasksList } from './TasksList';
-export let taskSet = null;
 
 export const Main = () => {
-  taskSet = useTasks();
+  localStorage.setItem("tasksTable", JSON.stringify(useSelector(tasksState).tasksTable));
+
   return (
     <Body>
       <Header title="Lista zadań" />

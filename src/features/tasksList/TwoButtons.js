@@ -1,24 +1,30 @@
-import { taskSet } from "./Main";
+import { useSelector, useDispatch } from "react-redux";
+import { tasksState, toggleHideTasks, setAllTasksDone } from "./tasksListSlice";
 import { StyledButton } from "../../styled";
 
-export const TwoButtons = () =>
+export const TwoButtons = () => {
 
-    (taskSet.tasksTable.length > 0) &&
-    (
-        <>
-            <StyledButton
-                $header
-                disabled={taskSet.tasksTable.every(({ done }) => !done)}
-                onClick={taskSet.toggleHideTasks}
-            >
-                {taskSet.hideTasks ? "Pokaż" : "Ukryj"} ukończone
-            </StyledButton>
-            <StyledButton
-                $header
-                disabled={taskSet.tasksTable.every(({ done }) => done)}
-                onClick={taskSet.setAllTasksDone}
-            >
-                Ukończ wszystkie
-            </StyledButton>
-        </>
+    const { tasksTable, hideTasks } = useSelector(tasksState);
+    const dispatch = useDispatch();
+
+    return ((tasksTable.length > 0) &&
+        (
+            <>
+                <StyledButton
+                    $header
+                    disabled={tasksTable.every(({ done }) => !done)}
+                    onClick={() => dispatch(toggleHideTasks())}
+                >
+                    {hideTasks ? "Pokaż" : "Ukryj"} ukończone
+                </StyledButton>
+                <StyledButton
+                    $header
+                    disabled={tasksTable.every(({ done }) => done)}
+                    onClick={() => dispatch(setAllTasksDone())}
+                >
+                    Ukończ wszystkie
+                </StyledButton>
+            </>
+        )
     );
+};
