@@ -24,10 +24,21 @@ const tasksListSlice = createSlice({
     removeTask: (state, { payload }) => {
       state.tasksTable = state.tasksTable.filter(task => task.id !== payload);
     },
+    fetchExamaplesTasks: () => { },
+    setExamplesTasks: (state, { payload: examplesTasks }) => {
+      state.tasksTable = examplesTasks;
+    },
   },
 });
 
-export const { addTask, toggleHideTasks, setAllTasksDone,
-  setTaskDone, removeTask } = tasksListSlice.actions;
+export const {
+  addTask,
+  toggleHideTasks,
+  setAllTasksDone,
+  setTaskDone,
+  removeTask,
+  fetchExamaplesTasks,
+  setExamplesTasks,
+} = tasksListSlice.actions;
 export const tasksState = state => state.tasksTable;
 export default tasksListSlice.reducer;
