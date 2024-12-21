@@ -1,0 +1,22 @@
+[
+  {
+    "id": "0",
+    "content": "Przeczytaj opis aplikacji w README.md.",
+    "done": true
+  },
+  {
+    "id": "1",
+    "content": "Naciśnij zielony przycisk po lewej stronie dowolnego zadania.",
+    "done": false
+  },
+  {
+    "id": "2",
+    "content": "Naciśnij czerwony przycisk po prawej stronie dowolnego zadania.",
+    "done": false
+  },
+  {
+    "id": "3",
+    "content": "Spróbuj dodać nowe zdanie do listy.",
+    "done": false
+  }
+]
