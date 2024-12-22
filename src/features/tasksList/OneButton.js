@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { tasksState, fetchExamaplesTasks } from "./tasksListSlice";
+import { fetchExamaplesTasks, selectTasksTable } from "./tasksListSlice";
 import { StyledButton } from "../../styled";
 
 export const OneButton = () => {
 
-  const { tasksTable } = useSelector(tasksState);
+  const tasksTable = useSelector(selectTasksTable);
   const dispatch = useDispatch();
 
   return (
