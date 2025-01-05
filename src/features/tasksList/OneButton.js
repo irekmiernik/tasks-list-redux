@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { fetchExamaplesTasks, selectTasksTable } from "./tasksListSlice";
+import { fetchExamapleTasks, selectTasksTable } from "./tasksListSlice";
 import { StyledButton } from "../../styled";
 
 export const OneButton = () => {
@@ -11,7 +11,7 @@ export const OneButton = () => {
     <StyledButton
       $header
       disabled={tasksTable.length > 0}
-      onClick={() => dispatch(fetchExamaplesTasks())}
+      onClick={() => dispatch(fetchExamapleTasks())}
     >
       Pokaż przykładowe zadania
     </StyledButton>

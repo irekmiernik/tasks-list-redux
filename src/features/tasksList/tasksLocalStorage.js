@@ -1,5 +1,7 @@
+const localStorageKey = "tasksTable";
+
 export const saveAtLocalStorage = tasksTable =>
-  localStorage.setItem("tasksTable", JSON.stringify(tasksTable));
+  localStorage.setItem(localStorageKey, JSON.stringify(tasksTable));
 
 export const getFromLocalStorage = () =>
-  JSON.parse(localStorage.getItem("tasksTable")) || [];
+  JSON.parse(localStorage.getItem(localStorageKey)) || [];

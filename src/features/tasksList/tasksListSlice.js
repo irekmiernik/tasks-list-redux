@@ -25,10 +25,10 @@ const tasksListSlice = createSlice({
     removeTask: (state, { payload: id }) => {
       state.tasksTable = state.tasksTable.filter(task => task.id !== id);
     },
-    fetchExamaplesTasks: () => { },
+    fetchExamapleTasks: () => { },
 
-    setExamplesTasks: (state, { payload: examplesTasks }) => {
-      state.tasksTable = examplesTasks;
+    setExampleTasks: (state, { payload: exampleTasks }) => {
+      state.tasksTable = exampleTasks;
     },
   },
 });
@@ -39,8 +39,8 @@ export const {
   setAllTasksDone,
   setTaskDone,
   removeTask,
-  fetchExamaplesTasks,
-  setExamplesTasks,
+  fetchExamapleTasks,
+  setExampleTasks,
 } = tasksListSlice.actions;
 
 export const selectState = state => state.tasksTable;

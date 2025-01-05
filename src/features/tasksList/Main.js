@@ -11,6 +11,7 @@ export const Main = () => {
     <main>
       <Header title="Lista zadań" />
       <Section title="Dodaj nowe zadanie" oneButton={<OneButton />} body={<AddTask />} />
+      <Section title="Znajdź zadanie" />
       <Section title="Lista zadań" twoButtons={<TwoButtons />} body={<TasksList />} />
     </main>
   );
