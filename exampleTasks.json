@@ -2,7 +2,7 @@
   {
     "id": "0",
     "content": "Przeczytaj opis aplikacji w README.md.",
-    "done": true
+    "done": false
   },
   {
     "id": "1",
@@ -17,6 +17,6 @@
   {
     "id": "3",
     "content": "Spróbuj dodać nowe zdanie do listy.",
-    "done": false
+    "done": true
   }
 ]
