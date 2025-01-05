@@ -1,8 +1,8 @@
 import { Header } from '../../common/Header';
 import { Section } from '../../common/Section';
 import { AddTask } from './AddTask';
-import { OneButton } from './OneButton';
-import { TwoButtons } from './TwoButtons';
+import { ExampleTasksButton } from './ExampleTasksButton';
+import { HideAndAllDoneButtons } from './HideAndAllDoneButtons';
 import { TasksList } from './TasksList';
 
 export const Main = () => {
@@ -10,9 +10,9 @@ export const Main = () => {
   return (
     <main>
       <Header title="Lista zadań" />
-      <Section title="Dodaj nowe zadanie" oneButton={<OneButton />} body={<AddTask />} />
+      <Section title="Dodaj nowe zadanie" oneButton={<ExampleTasksButton />} body={<AddTask />} />
       <Section title="Znajdź zadanie" />
-      <Section title="Lista zadań" twoButtons={<TwoButtons />} body={<TasksList />} />
+      <Section title="Lista zadań" twoButtons={<HideAndAllDoneButtons />} body={<TasksList />} />
     </main>
   );
 };

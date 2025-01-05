@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchExamapleTasks, selectTasksTable } from "./tasksListSlice";
 import { StyledButton } from "../../styled";
 
-export const OneButton = () => {
+export const ExampleTasksButton = () => {
 
   const tasksTable = useSelector(selectTasksTable);
   const dispatch = useDispatch();

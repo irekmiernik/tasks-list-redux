@@ -9,7 +9,7 @@ import {
 } from "./tasksListSlice";
 import { StyledButton } from "../../styled";
 
-export const TwoButtons = () => {
+export const HideAndAllDoneButtons = () => {
 
     const emptyTasksTable = useSelector(selectEmptyTasksTable);
     const hideDone = useSelector(selectHideDone);
