@@ -5,7 +5,8 @@ import { ExampleTasksButton } from './ExampleTasksButton';
 import { HideAndAllDoneButtons } from './HideAndAllDoneButtons';
 import { TasksList } from './TasksList';
 
-export const Main = () => {
+export const Tasks = () => {
+
 
   return (
     <main>
