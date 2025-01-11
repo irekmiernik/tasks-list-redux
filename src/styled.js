@@ -1,4 +1,16 @@
 import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
+
+const activeClassName = "active";
+
+export const StyledNavLink = styled(NavLink).attrs(() => ({
+    activeClassName,
+}))
+    `
+    &.${activeClassName} {
+        color:red;
+    }
+`;
 
 export const StyledH1 = styled.h1`
     max-width: 100%;
@@ -47,9 +59,13 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledInput = styled.input`
-    flex: 1 1 auto;
     padding: 5px;
     margin: 10px;
+    width: 98%;
+
+    ${({ $add }) => $add && css`
+        flex: 1 1 auto;
+    `}
 `;
 
 export const StyledButton = styled.button`
