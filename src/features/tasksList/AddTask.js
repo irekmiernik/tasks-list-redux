@@ -26,6 +26,7 @@ export const AddTask = () => {
     return (
         <StyledForm onSubmit={onDodajZadanie}>
             <StyledInput
+                $add
                 placeholder="Co jest do zrobienia?"
                 value={taskName}
                 onChange={({ target }) => setTaskName(target.value)}

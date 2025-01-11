@@ -1,19 +1,24 @@
 import { useSelector, useDispatch } from "react-redux";
-import { fetchExamapleTasks, selectTasksTable } from "./tasksListSlice";
+import { fetchExamapleTasks, selectEmptyTasksTable, selectLoading } from "./tasksListSlice";
 import { StyledButton } from "../../styled";
 
 export const ExampleTasksButton = () => {
 
-  const tasksTable = useSelector(selectTasksTable);
+  const emptyTasksTable = useSelector(selectEmptyTasksTable);
+  const loading = useSelector(selectLoading);
   const dispatch = useDispatch();
 
   return (
     <StyledButton
       $header
-      disabled={tasksTable.length > 0}
+      disabled={!emptyTasksTable || loading}
       onClick={() => dispatch(fetchExamapleTasks())}
     >
-      Pokaż przykładowe zadania
+      {
+        loading
+          ? "Pobieranie zadań..."
+          : "Pokaż przykładowe zadania"
+      }
     </StyledButton>
   );
 };

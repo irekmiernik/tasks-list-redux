@@ -1,7 +1,9 @@
-import { HashRouter, Redirect, NavLink, Switch, Route } from "react-router-dom";
+import { HashRouter, Redirect, Switch, Route } from "react-router-dom";
+import { StyledNavLink } from "./styled";
 import { Tasks } from "./features/tasksList/Tasks";
 import { TaskPage } from "./features/tasksList/TaskPage";
 import { AuthorPage } from "./features/author/AuthorPage";
+import { toTask, toTasks, toAuthor } from "./routs";
 
 export default function App() {
   return (
@@ -9,25 +11,25 @@ export default function App() {
       <nav>
         <ul>
           <li>
-            <NavLink activeClassName="act" to="/zadania">Lista zadań</NavLink>
+            <StyledNavLink to={toTasks()}>Lista zadań</StyledNavLink>
           </li>
           <li>
-            <NavLink activeClassName="act" to="/autor">O autorze</NavLink>
+            <StyledNavLink to={toAuthor()}>O autorze</StyledNavLink>
           </li>
 
         </ul>
         <Switch>
-          <Route path="/zadania/:id">
+          <Route path={toTask()}>
             <TaskPage />
           </Route>
-          <Route path="/zadania">
+          <Route path={toTasks()}>
             <Tasks />
           </Route>
-          <Route path="/autor">
+          <Route path={toAuthor()}>
             <AuthorPage />
           </Route>
           <Route exact path="/">
-            <Redirect to="/zadania" />
+            <Redirect to={toTasks()} />
           </Route>
         </Switch>
       </nav>

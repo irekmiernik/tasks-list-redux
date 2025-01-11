@@ -6,6 +6,7 @@ const tasksListSlice = createSlice({
   initialState: {
     tasksTable: getFromLocalStorage(),
     hideDone: false,
+    loading: false,
   },
   reducers: {
     addTask: ({ tasksTable }, { payload: task }) => {
@@ -25,10 +26,15 @@ const tasksListSlice = createSlice({
     removeTask: (state, { payload: id }) => {
       state.tasksTable = state.tasksTable.filter(task => task.id !== id);
     },
-    fetchExamapleTasks: () => { },
-
-    setExampleTasks: (state, { payload: exampleTasks }) => {
+    fetchExamapleTasks: state => {
+      state.loading = true;
+    },
+    fetchExamapleTasksSuccess: (state, { payload: exampleTasks }) => {
       state.tasksTable = exampleTasks;
+      state.loading = false;
+    },
+    fetchExamapleTasksError: state => {
+      state.loading = false;
     },
   },
 });
@@ -40,15 +46,23 @@ export const {
   setTaskDone,
   removeTask,
   fetchExamapleTasks,
-  setExampleTasks,
+  fetchExamapleTasksSuccess,
+  fetchExamapleTasksError,
 } = tasksListSlice.actions;
 
 export const selectState = state => state.tasksTable;
 export const selectTasksTable = state => selectState(state).tasksTable;
 export const selectHideDone = state => selectState(state).hideDone;
+export const selectLoading = state => selectState(state).loading;
 export const selectEmptyTasksTable = state => selectTasksTable(state).length === 0;
 export const selectEveryDone = state => selectTasksTable(state).every(({ done }) => done);
 export const selectNooneDone = state => selectTasksTable(state).every(({ done }) => !done);
-export const selectTaskbyId = (state, taskId) => selectTasksTable(state).find(({ id }) => id === taskId);
+export const selectTaskById = (state, taskId) =>
+  selectTasksTable(state).find(({ id }) => id === taskId);
+export const selectTasksByQuery = (state, query) => {
+  const tasks = selectTasksTable(state);
+  if (!query || query.trim() === "") return tasks;
+  return tasks.filter(({ content }) => content.toUpperCase().includes(query.trim().toUpperCase()));
+};
 
 export default tasksListSlice.reducer;
