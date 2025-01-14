@@ -5,11 +5,15 @@ import {
     selectHideDone,
     selectEmptyTasksTable,
     selectEveryDone,
-    selectNooneDone
+    selectNooneDone,
 } from "./tasksListSlice";
 import { StyledButton } from "../../styled";
+import { useQueryParameter } from "./useSearch";
+import { searchParameters } from "./searchParameters";
 
 export const HideAndAllDoneButtons = () => {
+
+    const query = useQueryParameter(searchParameters);
 
     const emptyTasksTable = useSelector(selectEmptyTasksTable);
     const hideDone = useSelector(selectHideDone);
@@ -17,7 +21,7 @@ export const HideAndAllDoneButtons = () => {
     const nooneDone = useSelector(selectNooneDone);
     const dispatch = useDispatch();
 
-    return (!emptyTasksTable &&
+    return ((!emptyTasksTable && !query) &&
         (
             <>
                 <StyledButton

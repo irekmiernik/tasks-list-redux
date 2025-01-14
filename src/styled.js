@@ -1,14 +1,30 @@
 import styled, { css } from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+
+export const StyledLink = styled(Link)`
+    color: #000;
+    text-decoration-line: none;
+
+    &:hover {
+        background-color: #00000055;
+    };
+`;
 
 const activeClassName = "active";
-
 export const StyledNavLink = styled(NavLink).attrs(() => ({
     activeClassName,
 }))`
+    margin: 20px;
+    color: #00000055;
+    text-decoration-line: none;
+    
     &.${activeClassName} {
-        color:red;
-    }
+        color: #000;
+    };
+
+    &:hover {
+        background-color: #fff;
+    };
 `;
 
 export const StyledH1 = styled.h1`
@@ -41,6 +57,7 @@ export const StyledDiv = styled.div`
 
 export const StyledH2 = styled.h2`
     flex: 1 1 auto;
+    font-size: 20px;
     margin: 0;
     padding: 10px;
 `;
@@ -129,6 +146,17 @@ export const StyledUl = styled.ul`
     list-style-type: none;
     margin: 0px;
     padding-left: 0px;
+
+    ${({ $pages }) => $pages && css`
+        background-color: hsl(180, 100%, 30%);
+        padding: 0px;
+        border: 1px solid black;
+        border-radius: 10%;
+        font-size: 25px;
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content:center;
+    `};
 `;
 
 export const StyledLi = styled.li`

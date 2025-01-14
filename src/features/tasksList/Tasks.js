@@ -14,11 +14,11 @@ export const Tasks = () => {
 
   return (
     <main>
-      <Header title="Lista zadań" />
-      <Section title="Dodaj nowe zadanie" oneButton={<ExampleTasksButton />} body={<AddTask />} />
+      <Header title="" />
+      <Section title="Dodaj nowe zadanie do listy" oneButton={<ExampleTasksButton />} body={<AddTask />} />
       {emptyTasksTable ? "" :
-        <Section title="Wyszukaj zadania" body={<Search />} />}
-      <Section title="Lista zadań" twoButtons={<HideAndAllDoneButtons />} body={<TasksList />} />
+        <Section title="Wybierz interesujące Cię zadania" body={<Search />} />}
+      <Section title="Lista wybranych zadań" twoButtons={<HideAndAllDoneButtons />} body={<TasksList />} />
     </main>
   );
 };
