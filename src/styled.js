@@ -2,11 +2,11 @@ import styled, { css } from "styled-components";
 import { NavLink, Link } from "react-router-dom";
 
 export const StyledLink = styled(Link)`
-    color: #000;
+    color: ${({ theme }) => theme.color.black};
     text-decoration-line: none;
 
     &:hover {
-        background-color: #00000055;
+        background-color: ${({ theme }) => theme.color.stack};
     };
 `;
 
@@ -15,15 +15,15 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     activeClassName,
 }))`
     margin: 20px;
-    color: #00000055;
+    color: ${({ theme }) => theme.color.stack};
     text-decoration-line: none;
     
     &.${activeClassName} {
-        color: #000;
+        color: ${({ theme }) => theme.color.black};
     };
 
     &:hover {
-        background-color: #fff;
+        background-color: ${({ theme }) => theme.color.white};
     };
 `;
 
@@ -33,7 +33,7 @@ export const StyledH1 = styled.h1`
 `;
 
 export const StyledSection = styled.section`
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.color.white};
     max-width: 1000px;
     min-height: 130px;
     margin: 0 auto;
@@ -86,57 +86,57 @@ export const StyledInput = styled.input`
 
 export const StyledButton = styled.button`
     flex: 0 0 auto;
-    color: #fff;
-    background-color: hsl(180, 100%, 30%);
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.persianGreen};
     border-style: none;
     margin: 10px;
     padding: 6px;
     transition: 1s;
 
     &:hover {
-        background-color: hsl(180, 100%, 40%);
+        background-color: ${({ theme }) => theme.color.robinEggBlue};
         transform: scale(1.1);
     };
 
     ${({ $header }) => $header && css`
-        color: hsl(180, 100%, 30%);
-        background-color: #fff;
+        color: ${({ theme }) => theme.color.persianGreen};
+        background-color: ${({ theme }) => theme.color.white};
         padding: 0px;
         transition: 1s;
 
     &:hover {
-        color: hsl(180, 100%, 50%);
-        background-color: #fff;
+        color: ${({ theme }) => theme.color.aqua};
+        background-color: ${({ theme }) => theme.color.white};
         transform: scale(1.1);
     }
 
     &:disabled {
-        color: #aaa;
+        color: ${({ theme }) => theme.color.silverChalice};
     }
     `};
     
     ${({ $done }) => $done && css`
-        background-color: hsl(120, 100%, 30%);
+        background-color: ${({ theme }) => theme.color.limade};
         border-style: none;
         min-width: 27px;
         min-height: 27px;
         transition: 1s;
 
     &:hover {
-        background-color: hsl(120, 100%, 60%);
+        background-color: ${({ theme }) => theme.color.harlequin};
         transform: scale(1.1);
     }
     `};
 
     ${({ $delete }) => $delete && css`
-        background-color: hsl(0, 100%, 60%);
+        background-color: ${({ theme }) => theme.color.redOrange};
         border-style: none;
         min-width: 27px;
         min-height: 27px;
         transition: 1s;
 
     &:hover {
-        background-color: hsl(0, 100%, 70%);
+        background-color: ${({ theme }) => theme.color.bitterSweet};
         transform: scale(1.1);
     }
     `};
@@ -148,7 +148,7 @@ export const StyledUl = styled.ul`
     padding-left: 0px;
 
     ${({ $pages }) => $pages && css`
-        background-color: hsl(180, 100%, 30%);
+        background-color: ${({ theme }) => theme.color.persianGreen};
         padding: 0px;
         border: 1px solid black;
         border-radius: 10%;

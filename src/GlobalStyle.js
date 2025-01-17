@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 15px;
       padding: 20px;
       max-width: 100%;
-      background-color: #eee;
+      background: ${({ theme }) => theme.color.white};
       overflow-wrap: anywhere;
     }
 `;
