@@ -9,5 +9,6 @@ export const GlobalStyle = createGlobalStyle`
       max-width: 100%;
       background: ${({ theme }) => theme.color.white};
       overflow-wrap: anywhere;
+      word-wrap: normal;
     }
 `;
